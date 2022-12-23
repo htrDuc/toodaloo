@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
-// https://vitejs.dev/config/
+import { crx } from '@crxjs/vite-plugin'
+// @ts-ignore
+import manifest from './manifest.json'
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), crx({ manifest }),
+  ],
 })
